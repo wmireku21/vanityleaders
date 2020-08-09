@@ -1,0 +1,72 @@
+.party {
+  color: white;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  text-align: center;
+  font-size: 60px;
+
+}
+
+#button {
+  color: white;
+  border: 2px solid white;
+}
+
+#button:hover {
+  color: black;
+  background-color: white;
+  transition: all ease-in-out 0.3s;
+}
+
+
+.home-page {
+    background:  linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url("../photos/Chris_Vibes.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 745px;
+    position: relative;
+}
+
+/*
+.bottom-page {
+  margin-top: 20px;
+}
+
+
+.glasses {
+  size: 24px;
+}
+
+.col-lg-4 {
+    margin-bottom: 40px;
+}
+
+.col-lg-4:hover {
+  transform: scale(1.03);
+  transition: 0.2s all ease-in-out;
+  box-shadow: 
+  inset 0 -3em 3em rgba(0,0,0,0.1), 
+        0 0  0 2px rgb(255,255,255),
+        0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+*/
+
+a {
+  color:white;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+  transform: scale(1.05);
+  transition: all .4s ease-in-out;  
+}
+
+

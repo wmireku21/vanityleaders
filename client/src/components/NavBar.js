@@ -25,9 +25,9 @@ class NavBar extends Component {
       render() {
           return (
             <div>
-                <Navbar color="dark" dark expand="sm" className="mb-5">
+                <Navbar color="secondary" dark expand="sm">
                 <Container>
-                        <NavbarBrand><Link to="/">Vanity Leaders</Link></NavbarBrand>
+                        <NavbarBrand><Link to="/" onClick={this.toggle}>Vanity Leaders</Link></NavbarBrand>
                         <NavbarToggler onClick={this.toggle} />
                         <Collapse isOpen= {this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
