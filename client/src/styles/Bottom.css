@@ -1,0 +1,30 @@
+.footer {
+    background-color: lightgray;
+}
+
+#submit:hover {
+    color: white;
+}
+
+.part1 {
+    display: none;
+}
+
+
+@media screen and (max-width:750px) {
+    .part1 {
+        display: block;
+        width: 100%;
+    }
+
+    .part {
+        display: none;
+    }
+
+    .ico {
+        color: black;
+        font-size: 20px;
+        padding-right: 10px;
+    }
+   
+}

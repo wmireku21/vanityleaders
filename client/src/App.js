@@ -8,6 +8,7 @@ import Events from './components/Events.js';
 import About from './components/About.js';
 import Gallery from './components/Gallery.js';
 import Contact from './components/Contact.js';
+import Bottom from './components/Bottom.js';
 
 import './App.css';
 
@@ -20,6 +21,7 @@ function App() {
       <Route path="/gallery" component={Gallery}/>
       <Route path="/about" component={About}/>
       <Route path="/contact" component={Contact}/>
+      <Bottom/>
     </div>
   );
 }

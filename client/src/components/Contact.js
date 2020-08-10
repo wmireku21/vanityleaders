@@ -48,7 +48,17 @@ class Contact extends Component {
                                 <Button> Send Message</Button>
                             </Form>
                     </Container>
+                    {/*
+                    <div className="icons">
+                        <i className="fas fa-phone"></i>
+                        <i className="fas fa-envelope"></i>
+                        <i className="fab fa-facebook-f"></i>
+                        <i className="fab fa-instagram"></i>            
+                        <i className="fab fa-snapchat-ghost"></i>
+                    </div>
+                    */}
                 </div>
+               
             </div>
     );
   }
