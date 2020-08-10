@@ -1,0 +1,70 @@
+.contact-background {
+    background-color: #f7f7f7;
+    /*
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 810px;
+    min-width: 100%;
+    position: relative;
+    */
+    min-height: 800px;
+    min-width: 100%;
+    position: relative;
+}
+
+.contact {
+
+    margin-top: 10px;
+    max-width: 500px;
+    padding: 50px; 
+    background: #ffffff;
+    border: 10px solid #f2f2f2;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*
+    text-align: center;
+    background-color: white;
+    height: 500px;
+    border: 2px solid grey;
+    */
+}
+
+#contact-form {
+    margin-top: 30px;
+}
+
+h1 {
+    text-align: center;
+}
+
+input, textarea {
+    width: 100%;
+}
+
+#submit-btn {
+    background-color: purple;
+    color: white;
+}
+
+#contact-text {
+    text-align: center;
+}
+
+#btm-text {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.down {
+    font-size: 40px;
+    position: absolute;
+    top: 93%;
+    left: 49%;
+   
+}
+
+
