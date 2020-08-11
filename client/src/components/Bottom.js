@@ -44,10 +44,14 @@ class Bottom extends Component {
                     <div className="row">
                       
                         <div className="part col">
-                            <h4>Vanity Leaders 2020
-                            </h4>
-                            <p id="copyright"> Chicago, IL <br></br> 
-                            Copyright 2020 &copy; Vanity Leaders </p>
+                           <h4>Get In Touch</h4>
+                           <p>
+                           <a style={{color: 'black'}} href="tel:3127743151">(312) 774-3151</a><br></br>
+                           <a style={{color: 'black'}} href="mailto:vanityleaders@gmail.com">vanityleaders@gmail.com</a><br></br>
+                           </p>
+                           <a href="https://www.facebook.com/Vanity-Leaders-104289611177277/?__tn__=%2Cd%2CP-R&eid=ARDX3A1cL92_I3pStCE4lcCJ3EHTQh6okF3NkDSmh_U-yinUq3x8KWDP4WnzYx1rVQtpAxUZh_22sPtC"><i class="ico fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/vanityleaders/"><i class="ico fab fa-instagram"></i></a>
+                            <i class="ico fab fa-snapchat-ghost"></i>
                         </div>
                         <div className="part col-6" >
                             <h4> Subscribe to receive our latest updates</h4>
@@ -85,16 +89,12 @@ class Bottom extends Component {
                             </form>
                         </div>
                         <div className="part col">
-                           <h4>Get In Touch</h4>
-                           <p>
-                           Vanity Leaders<br></br>
-                           vanityleaders@gmail.com<br></br>
-                           (312) 774-3151
-                           </p>
-                            {/*<a href="/"><FaFacebookF size="18px" color="white" className="mr-3"/></a>
-                            <a href="https://www.instagram.com/vanityleaders/"><FaInstagram size="18px" color="white" className="mr-3"/></a>
-                            <a href=""><FaSnapchatGhost size="18px" color="white"/></a>*/}
+                            <h4>Vanity Leaders 
+                            </h4>
+                            <p id="copyright"> Chicago, IL <br></br> 
+                            Copyright 2020 &copy; Vanity Leaders </p>
                         </div>
+                        
                     </div>
                 </div>
                 <div class="part1">
