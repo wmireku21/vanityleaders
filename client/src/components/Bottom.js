@@ -138,8 +138,8 @@ class Bottom extends Component {
                                 <div class="col-sm-6">
                                     <h4>Get In Touch</h4>
                                     <p>
-                                    vanityleaders@gmail.com<br></br>
-                                    (312) 774-3151<br></br>
+                                    <i className="fas fa-phone"></i>{' '}<a style={{color: 'black'}} href="tel:3127743151">(312) 774-3151</a><br></br>
+                                    <i className="fas fa-envelope"></i>{' '}<a style={{color: 'black'}} href="mailto:vanityleaders@gmail.com">vanityleaders@gmail.com</a><br></br>
                                     <a href="https://www.facebook.com/Vanity-Leaders-104289611177277/?__tn__=%2Cd%2CP-R&eid=ARDX3A1cL92_I3pStCE4lcCJ3EHTQh6okF3NkDSmh_U-yinUq3x8KWDP4WnzYx1rVQtpAxUZh_22sPtC"><i class="ico fab fa-facebook-f"></i></a>
                                     <a href="https://www.instagram.com/vanityleaders/"><i class="ico fab fa-instagram"></i></a>
                                     <i class="ico fab fa-snapchat-ghost"></i>

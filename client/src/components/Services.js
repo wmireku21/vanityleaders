@@ -1,3 +1,7 @@
+import React from 'react';
+
+const i = "Hey"
+const ig = <a href="https://www.instagram.com/kwabenakumiphoto/?igshid=1sbv8bx27akmh">@KwabenaKumiPhotography</a>
 const services = [
     {
         id: 1,
@@ -27,7 +31,7 @@ const services = [
         id: 5,
         img: "https://img.icons8.com/wired/60/000000/compact-camera.png",
         title: "Photography",
-        text: `Along with our own photography services, we are also partnered with Kwabena Kumi Photography, a professional free-lance photographer. Check out his Instagram ${<a href="https://www.instagram.com/kwabenakumiphoto/?igshid=1sbv8bx27akmh">@KwabenaKumiPhotography</a>}.`
+        text: "Along with our own photography services, we are also partnered with Kwabena Kumi Photography, a professional free-lance photographer. Check out his Instagram" + ig
     },
     {
         id: 6,
