@@ -35,6 +35,8 @@ import dudes from '../photos/ybar_dudes1.jpg';
 import kasia from '../photos/ybar_Kasia_Cam_terri_Kwesi.jpg';
 import dorian from '../photos/dorian_sara.jpg';
 
+/* eslint-disable */
+
 class Gallery extends Component {
   render() {
     return (

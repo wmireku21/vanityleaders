@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import '../styles/Bottom.css';
-//import axios from 'axios';
+import axios from 'axios';
 
+import SubscribeSuccess from './SubscribeSuccess';
+import ErrorMessage from './ErrorMessage';
 
 class Bottom extends Component {
 
     constructor(props) {
         super(props); 
+        
         this.state = {
             name: '',
             email: '',
@@ -18,20 +21,31 @@ class Bottom extends Component {
     }
 
     handleChange = e => {
-        this.setState({ [e.target.name]: e.target.value })
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
   
-    handleSubmit(e) {
-        e.preventDefault();
+    handleSubmit = e => {
 
-        const {name, email, number} = this.state;
-        // eslint-disable-next-line
-        {/*axios.post('/signup', {
-          name,
-          email,
-          number
-        }) */}
-        
+
+        e.preventDefault();
+        let newContact = JSON.stringify(
+            {
+            name: this.state.name,
+            email: this.state.email,
+            number: this.state.number
+            });
+
+        axios.post('/api/items', newContact, {headers:{"Content-Type" : "application/json"}})
+             .then(res => console.log(res.data))
+             .catch(err => console.log(err));
+
+        this.setState({
+            name: '',
+            email: '',
+            number: ''
+        })
     }
 
     render() {
@@ -40,7 +54,7 @@ class Bottom extends Component {
                 <div className="mt-20">
                     <br></br>
                 </div>
-                <div className="bottom-page" className="container">
+                <div className="container bottom-page">
                     <div className="row">
                       
                         <div className="part col">
@@ -50,33 +64,41 @@ class Bottom extends Component {
                            <a style={{color: 'black'}} href="mailto:vanityleaders@gmail.com">vanityleaders@gmail.com</a><br></br>
                            </p>
                            <a href="https://www.facebook.com/Vanity-Leaders-104289611177277/?__tn__=%2Cd%2CP-R&eid=ARDX3A1cL92_I3pStCE4lcCJ3EHTQh6okF3NkDSmh_U-yinUq3x8KWDP4WnzYx1rVQtpAxUZh_22sPtC"><i class="ico fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/vanityleaders/"><i class="ico fab fa-instagram"></i></a>
-                            <i class="ico fab fa-snapchat-ghost"></i>
+                            <a href="https://www.instagram.com/vanityleaders/"><i className="ico fab fa-instagram"></i></a>
+                            <i className="ico fab fa-snapchat-ghost"></i>
                         </div>
                         <div className="part col-6" >
                             <h4> Subscribe to receive our latest updates</h4>
-                            <form action="/signup" method="POST">
+                            <form onSubmit={this.handleSubmit} method="POST">
                                 <div class="form-group">
                                     <input
+                                    onChange={this.handleChange}
+                                    value={this.state.name}
                                     type="text"
-                                    name="fullName"
+                                    name="name"
                                     id="full-name"
                                     class="form-control"
                                     placeholder="Full Name"
+                                    required
                                     />
                                 </div>
                                 <div class="form-group">
                                     <input
+                                    onChange={this.handleChange}
+                                    value={this.state.email}
                                     type="email"
                                     name="email"
                                     id="email"
                                     class="form-control"
                                     placeholder="Email"
+                                    required
                                     />
                                 </div>
                                 <div class="form-group">
                                     <input
-                                    type="text"
+                                    onChange={this.handleChange}
+                                    value={this.state.number}
+                                    type="number"
                                     name="number"
                                     id="number"
                                     class="form-control"
@@ -100,35 +122,43 @@ class Bottom extends Component {
                 <div class="part1">
                     <div className="container" >
                             <h4 style={{textAlign: 'center'}}> Subscribe to receive our latest updates</h4>
-                            <form action="/signup" method="POST">
+                            <form onSubmit={this.handleSubmit}>
                                 <div class="form-group">
                                     <input
+                                    onChange={this.handleChange}
+                                    value={this.state.name}
                                     type="text"
-                                    name="fullName"
+                                    name="name"
                                     id="full-name"
                                     class="form-control"
                                     placeholder="Full Name"
+                                    required
                                     />
                                 </div>
                                 <div class="form-group">
                                     <input
+                                    onChange={this.handleChange}
+                                    value={this.state.email}
                                     type="email"
                                     name="email"
                                     id="email"
                                     class="form-control"
                                     placeholder="Email"
+                                    required
                                     />
                                 </div>
                                 <div class="form-group">
                                     <input
-                                    type="text"
+                                    onChange={this.handleChange}
+                                    value={this.state.number}
+                                    type="number"
                                     name="number"
                                     id="number"
                                     class="form-control"
                                     placeholder="Phone Number (optional)"
                                     />
                                 </div>
-                                <button id="submit" type="submit" class="btn btn-dark btn-block">
+                                <button onClick={this.handleSubmit} id="submit" type="submit" class="btn btn-dark btn-block">
                                     Sign Up
                                 </button>
                             </form>
@@ -141,8 +171,8 @@ class Bottom extends Component {
                                     <i className="fas fa-phone"></i>{' '}<a style={{color: 'black'}} href="tel:3127743151">(312) 774-3151</a><br></br>
                                     <i className="fas fa-envelope"></i>{' '}<a style={{color: 'black'}} href="mailto:vanityleaders@gmail.com">vanityleaders@gmail.com</a><br></br>
                                     <a href="https://www.facebook.com/Vanity-Leaders-104289611177277/?__tn__=%2Cd%2CP-R&eid=ARDX3A1cL92_I3pStCE4lcCJ3EHTQh6okF3NkDSmh_U-yinUq3x8KWDP4WnzYx1rVQtpAxUZh_22sPtC"><i class="ico fab fa-facebook-f"></i></a>
-                                    <a href="https://www.instagram.com/vanityleaders/"><i class="ico fab fa-instagram"></i></a>
-                                    <i class="ico fab fa-snapchat-ghost"></i>
+                                    <a href="https://www.instagram.com/vanityleaders/"><i className="ico fab fa-instagram"></i></a>
+                                    <i className="ico fab fa-snapchat-ghost"></i>
 
                                     </p>
                                 </div>

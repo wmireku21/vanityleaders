@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { 
-    Col, 
-    Row, 
+    
     Button, 
     Form, 
     FormGroup, 
@@ -13,15 +12,6 @@ from 'reactstrap';
 import '../styles/Contact.css';
 
 class Contact extends Component {
-    constructor() {
-        super()
-
-        this.state = {
-            name: '',
-            email: '',
-            message: ''
-        }
-    }
     
     render() {
         return (
@@ -45,18 +35,9 @@ class Contact extends Component {
                                     <Label><b>Message</b></Label>
                                     <Input type="textarea" name="text" id="contact-message" placeholder="Type your message here" required/>
                                 </FormGroup>
-                                <Button> Send Message</Button>
+                                <Button > Send Message</Button>
                             </Form>
                     </Container>
-                    {/*
-                    <div className="icons">
-                        <i className="fas fa-phone"></i>
-                        <i className="fas fa-envelope"></i>
-                        <i className="fab fa-facebook-f"></i>
-                        <i className="fab fa-instagram"></i>            
-                        <i className="fab fa-snapchat-ghost"></i>
-                    </div>
-                    */}
                 </div>
                
             </div>

@@ -12,7 +12,6 @@ const ItemSchema = new Schema({
     },
     number: {
         type: Number,
-        required: false
     },
     date: {
         type: Date,

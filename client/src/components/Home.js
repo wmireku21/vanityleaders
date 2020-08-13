@@ -10,12 +10,6 @@ class Home extends Component {
     
   render() {
 
-
-
-    const service = services.map((item) => 
-        <SingleService key={item.id} img={item.img} title={item.title} text={item.text}/>
-    );
-
     return (
         <div>
             <div className="home-page">
@@ -29,7 +23,7 @@ class Home extends Component {
                 <Container>
                     <Row>
                         <Col xs="4">
-                            <img id="logo" src={vanity} style={{width: '300px', height: '200px'}}/>
+                            <img id="logo" alt="vanitylogo" src={vanity} style={{width: '300px', height: ''}}/>
                         </Col>
                         <Col xs="8">
                             <p>Vanity Leaders is Chicago’s latest addition to the entertainment and creative community that is booming in the city. 

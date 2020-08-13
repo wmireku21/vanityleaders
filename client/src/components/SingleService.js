@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { Container, Col, Row} from 'reactstrap';
+
+/* eslint-disable */
 
 class SingleService extends Component {
     constructor(props) {
