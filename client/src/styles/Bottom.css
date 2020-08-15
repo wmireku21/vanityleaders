@@ -17,7 +17,7 @@
 }
 
 
-@media screen and (max-width:750px) {
+@media screen and (max-width:1200px) {
     .part1 {
         display: block;
         width: 100%;

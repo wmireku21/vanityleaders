@@ -18,21 +18,11 @@ class Home extends Component {
                     {/*<button id="button" type="button" class="btn btn-lg">Contact</button>*/}
                 </div>
             </div>
-            <Container className="who">
-                <h1 style={{textAlign: 'center', marginTop: '20px'}}><b>who</b> we are?</h1>
-                <Container>
-                    <Row>
-                        <Col xs="4">
-                            <img id="logo" alt="vanitylogo" src={vanity} style={{width: '300px', height: ''}}/>
-                        </Col>
-                        <Col xs="8">
-                            <p>Vanity Leaders is Chicago’s latest addition to the entertainment and creative community that is booming in the city. 
+            <Container className="who" style={{textAlign: 'center'}}>
+                <h1 style={{marginTop: '20px'}}><b>who</b> we are?</h1>
+                <p id="vanity-text" style={{fontSize: '22px'}}>Vanity Leaders is Chicago’s latest addition to the entertainment and creative community that is booming in the city. 
                                 Vanity provides our audiences with a variety of themed parties and exhibitions to captivate the mind! One week you’re at a musical showcase at a lounge or restaurant, and next weekend you may be out in one of the city’s hottest club scenes. 
-                                There are no boundaries to how much fun you will be having when you dance to our vast selection of Music which include: Afrobeats, Hip-Hop, Pop, Reggaeton, Chicago House, Throwbacks, Intimate R&B selections, and more.
                                 Not only do we host parties and outings, but Vanity Leaders’ believe in enforcing a positive impact into the neighborhoods that make up our city of Chicago.</p>
-                        </Col>
-                    </Row>
-                </Container>
             </Container>
             <Col className="services">
                 <h1 style={{textAlign: 'center'}}><b>what</b> we do?</h1>

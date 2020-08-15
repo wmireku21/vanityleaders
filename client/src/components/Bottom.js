@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import '../styles/Bottom.css';
 import axios from 'axios';
+import { Button, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactstrap';
 
-import SubscribeSuccess from './SubscribeSuccess';
-import ErrorMessage from './ErrorMessage';
 
 class Bottom extends Component {
 
@@ -60,12 +59,17 @@ class Bottom extends Component {
                         <div className="part col">
                            <h4>Get In Touch</h4>
                            <p>
-                           <a style={{color: 'black'}} href="tel:3127743151">(312) 774-3151</a><br></br>
-                           <a style={{color: 'black'}} href="mailto:vanityleaders@gmail.com">vanityleaders@gmail.com</a><br></br>
+                           <i className="fas fa-phone"></i>{' '}<a style={{color: 'black'}} href="tel:3127743151">(312) 774-3151</a><br></br>
+                           <i className="fas fa-envelope"></i>{' '}<a style={{color: 'black'}} href="mailto:vanityleaders@gmail.com">vanityleaders@gmail.com</a><br></br>
                            </p>
-                           <a href="https://www.facebook.com/Vanity-Leaders-104289611177277/?__tn__=%2Cd%2CP-R&eid=ARDX3A1cL92_I3pStCE4lcCJ3EHTQh6okF3NkDSmh_U-yinUq3x8KWDP4WnzYx1rVQtpAxUZh_22sPtC"><i class="ico fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/vanityleaders/"><i className="ico fab fa-instagram"></i></a>
-                            <i className="ico fab fa-snapchat-ghost"></i>
+                           <a href="https://www.facebook.com/Vanity-Leaders-104289611177277/?__tn__=%2Cd%2CP-R&eid=ARDX3A1cL92_I3pStCE4lcCJ3EHTQh6okF3NkDSmh_U-yinUq3x8KWDP4WnzYx1rVQtpAxUZh_22sPtC" target="_blank"><i class="ico fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/vanityleaders/" target="_blank"><i className="ico fab fa-instagram"></i></a>
+                            <i style={{cursor: 'pointer'}} id="UncontrolledPopover" className="ico fab fa-snapchat-ghost"></i>      
+                            <UncontrolledPopover placement="bottom" target="UncontrolledPopover">
+                                <PopoverHeader>Snapchat</PopoverHeader>
+                                <PopoverBody>Follow VanityLeaders on Snapchat @vanityleaders</PopoverBody>
+                            </UncontrolledPopover>
+                            
                         </div>
                         <div className="part col-6" >
                             <h4> Subscribe to receive our latest updates</h4>
@@ -172,8 +176,11 @@ class Bottom extends Component {
                                     <i className="fas fa-envelope"></i>{' '}<a style={{color: 'black'}} href="mailto:vanityleaders@gmail.com">vanityleaders@gmail.com</a><br></br>
                                     <a href="https://www.facebook.com/Vanity-Leaders-104289611177277/?__tn__=%2Cd%2CP-R&eid=ARDX3A1cL92_I3pStCE4lcCJ3EHTQh6okF3NkDSmh_U-yinUq3x8KWDP4WnzYx1rVQtpAxUZh_22sPtC"><i class="ico fab fa-facebook-f"></i></a>
                                     <a href="https://www.instagram.com/vanityleaders/"><i className="ico fab fa-instagram"></i></a>
-                                    <i className="ico fab fa-snapchat-ghost"></i>
-
+                                    <i style={{cursor: 'pointer'}} id="UncontrolledPopover" className="ico fab fa-snapchat-ghost"></i>      
+                                    <UncontrolledPopover placement="bottom" target="UncontrolledPopover">
+                                        <PopoverHeader>Snapchat</PopoverHeader>
+                                        <PopoverBody>Follow VanityLeaders on Snapchat @vanityleaders</PopoverBody>
+                                    </UncontrolledPopover>
                                     </p>
                                 </div>
                                 <div className="col-sm-6">

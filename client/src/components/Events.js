@@ -15,7 +15,8 @@ class Events extends Component {
                 to have better events when everything clears up.</h2>  
                 <div className="row" style={{textAlign: 'center'}}>
                     <div className="col-lg-4">
-                        <img src={"https://img.icons8.com/plasticine/100/000000/protection-mask.png"}/>                        <h3>Wear Your Mask</h3>
+                        <img src={"https://img.icons8.com/clouds/100/000000/protection-mask.png"}/> 
+                        <h3>Wear Your Mask</h3>
                         <ul>
                             <li>You can have the virus and not show any symptoms</li>
                             <li>If you have breathing problems, take breaks so you're not suffocating yourself while wearing</li>
@@ -23,7 +24,7 @@ class Events extends Component {
                         </ul>
                     </div>
                     <div className="col-lg-4">
-                        <img src={"https://img.icons8.com/doodle/100/000000/wash-your-hands.png"} />
+                        <img src={"https://img.icons8.com/clouds/100/000000/wash-your-hands.png"}/>                        
                         <h3>Clean</h3>
                         <ul>
                             <li>Use hand sanitizer with atleast 60% alcohol</li>
@@ -33,8 +34,7 @@ class Events extends Component {
                         </ul>
                     </div>
                     <div className="col-lg-4">
-                        <img src={"https://img.icons8.com/doodle/100/000000/social-distancing.png"}/>
-                        <h3>Keep Your Distance</h3>
+                        <img src={"https://img.icons8.com/clouds/100/000000/fever.png"}/>                        <h3>Keep Your Distance</h3>
                         <ul>
                             <li>Without a mask, it is best to stay atleast 6 feet away from others, especially strangers</li>
                             <li>Even with a mask, still try to stay atleast 6 feet away if you can</li>
