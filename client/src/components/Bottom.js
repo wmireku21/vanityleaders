@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import '../styles/Bottom.css';
 import axios from 'axios';
-import { Button, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactstrap';
+import { Button, UncontrolledPopover, PopoverHeader, PopoverBody, Toast, ToastBody, ToastHeader, Spinner, ButtonDropdown } from 'reactstrap';
 
 
 class Bottom extends Component {
@@ -12,7 +12,8 @@ class Bottom extends Component {
         this.state = {
             name: '',
             email: '',
-            number: ''
+            number: '',
+            toast: false
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -39,12 +40,18 @@ class Bottom extends Component {
         axios.post('/api/items', newContact, {headers:{"Content-Type" : "application/json"}})
              .then(res => console.log(res.data))
              .catch(err => console.log(err));
-
+        
         this.setState({
             name: '',
             email: '',
             number: ''
         })
+    }
+
+    toggle = () => {
+        this.setState({
+            toast: !this.state.modal
+        });
     }
 
     render() {
@@ -109,9 +116,9 @@ class Bottom extends Component {
                                     placeholder="Phone Number (optional)"
                                     />
                                 </div>
-                                <button id="submit" type="submit" class="btn btn-dark btn-block">
+                                <Button id="submit" type="submit" className="btn btn-dark btn-block">
                                     Sign Up
-                                </button>
+                                </Button>
                             </form>
                         </div>
                         <div className="part col">

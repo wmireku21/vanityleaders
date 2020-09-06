@@ -34,7 +34,7 @@ class Home extends Component {
                     )};
                 </Row>
             </Col>
-            <Container className="why" style={{marginBottom: '20px' }}>
+            <Container className="why">
                 <h1 style={{textAlign: 'center' }}> & <b>why </b>we do this?</h1>
                 <br></br>
                 <p style={{fontSize: '22px', textAlign: 'center'}}>Vanity Leaders look to be more than just entertainment service, but also a organizaion who

@@ -1,6 +1,7 @@
 import React from 'react';
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 
-const ig = <a href="https://www.instagram.com/kwabenakumiphoto/?igshid=1sbv8bx27akmh">@KwabenaKumiPhotography</a>
+const ig = "<a href='https://www.instagram.com/kwabenakumiphoto/?igshid=1sbv8bx27akmh'>@KwabenaKumiPhotography</a>"
 const services = [
     {
         id: 1,
@@ -30,7 +31,7 @@ const services = [
         id: 5,
         img: "https://img.icons8.com/clouds/100/000000/panorama.png",
         title: "Photography",
-        text: "Along with our own photography services, we are also partnered with Kwabena Kumi Photography, a professional free-lance photographer. Check out his Instagram" 
+        text: "Along with our own photography services, we are also partnered with Kwabena Kumi Photography, a professional free-lance photographer. Check out his Instagram @KwabenaKumiPhotography"
     },
     {
         id: 6,
