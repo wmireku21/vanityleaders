@@ -28,7 +28,6 @@ class Bottom extends Component {
   
     handleSubmit = e => {
 
-
         e.preventDefault();
         let newContact = JSON.stringify(
             {
