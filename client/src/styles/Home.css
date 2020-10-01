@@ -1,6 +1,16 @@
+.home-page {
+  background-image:  linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ),url("../photos/Chris_Vibes.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 745px;
+}
 
 .party {
-  padding-top: 15%;
+  padding: 15%;
   color: white;
   text-align: center;
   font-size: 60px;
@@ -17,17 +27,6 @@
   transition: all ease-in-out 0.3s;
 }
 
-.home-page {
-    background-image:  linear-gradient(
-      rgba(0, 0, 0, 0.5), 
-      rgba(0, 0, 0, 0.5)
-    ),url("../photos/Chris_Vibes.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 745px;
-    background-attachment: fixed;
-}
 
 a {
   color:white;
