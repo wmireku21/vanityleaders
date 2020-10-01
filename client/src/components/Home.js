@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import '../styles/Home.css';
-import services from './services';
+import services from './Services.js';
 import SingleService from './SingleService';
 import { Container, Col, Row} from 'reactstrap';
-import vanity from '../photos/VanityLogo.jpg';
 
 
 class Home extends Component {
