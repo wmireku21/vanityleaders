@@ -30,7 +30,7 @@ class Home extends Component {
                         <Col sm="4">
                             <SingleService key={item.id} img={item.img} title={item.title} text={item.text}/>
                         </Col>
-                    )};
+                    )}
                 </Row>
             </Col>
             <Container className="why">
