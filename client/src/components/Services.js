@@ -31,9 +31,9 @@ const services = [
     },
     {
         id: 6,
-        img: "https://img.icons8.com/clouds/100/000000/broken-computer.png",
-        title: "Web Development",
-        text: "Our Web Development team will create you an original site from the ground up through coding, and provide you with a reliable active site that you can show off to the world."
+        img: "https://img.icons8.com/clouds/100/000000/share.png",
+        title: "Advertising",
+        text: "Our team will help promote your business and bring targeted potential customers to your service. Through our creative content pieces, we will able to attract a wider audience."
     }
 ]
 

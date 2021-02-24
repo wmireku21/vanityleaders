@@ -12,7 +12,8 @@ class Events extends Component {
                 <h1 style={{textAlign: 'center'}}>Events</h1>
                 <h2 style={{textAlign: 'center', margin: '15px 0px'}}>Due to COVID-19, all events have been postponed til further notice. Throughout this time,
                 Vanity Leaders is taking this time to stay healthy, help out those in need and network with other vendors
-                to have better events when everything clears up.</h2>  
+                to have better events when everything clears up.</h2> 
+                <h3 style={{textAlign: 'center', color: 'lightblue'}}>In the meantime, here's what you should do:</h3> 
                 <div className="row" style={{textAlign: 'center'}}>
                     <div className="col-lg-4">
                         <img src={"https://img.icons8.com/clouds/100/000000/protection-mask.png"}/> 
