@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import '../styles/Bottom.css';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Button, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactstrap';
 
+//const notify = (message) => toast.success(message);
 
 class Bottom extends Component {
 
@@ -13,6 +16,8 @@ class Bottom extends Component {
             name: '',
             email: '',
             number: '',
+            success: '',
+            error: '',
             toast: false
         }
 
@@ -37,14 +42,36 @@ class Bottom extends Component {
             });
 
         axios.post('/api/items', newContact, {headers:{"Content-Type" : "application/json"}})
-             .then(res => console.log(res.data))
-             .catch(err => console.log(err));
-        
-        this.setState({
+             .then(res => {
+                 //res => console.log(res.data)
+                 //this.setState({success: res.status});
+                 toast.success("You've been added to the subscription list")
+             })
+             .catch(
+                 err => this.setState({err: err})
+                //err => console.log(err)
+                //notify("Oops, something is wrong. Please check again")
+                );
+            
+            if (this.state.error !== '') {
+                toast.warn('Oops, something is wrong. Please look over your submission and try again')
+            }
+        /*if (this.state.success === '200') {
+            toast("You've been added to the subscription list")
+        } else {
+            toast("Oops, something is wrong. Check again")
+        }
+        */
+
+        setTimeout(() => this.setState({
             name: '',
             email: '',
-            number: ''
-        })
+            number: '',
+            error: ''
+        }), 5500);
+        
+
+        
     }
 
     toggle = () => {
@@ -56,6 +83,7 @@ class Bottom extends Component {
     render() {
         return (
             <div className="footer">
+                <ToastContainer position="top-center"/>
                 <div className="mt-20">
                     <br></br>
                 </div>

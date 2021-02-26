@@ -11,6 +11,9 @@ import {
 from 'reactstrap';
 import '../styles/Contact.css';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 class Contact extends Component {
     constructor(props) {
@@ -40,13 +43,14 @@ class Contact extends Component {
             name, 
             email, 
             message
-        })
+        }).then(toast.success("Thank you for the message. I will be responding as soon as possible"))
+        .catch(err => console.log(err));
 
-        this.setState({
+        setTimeout(() => this.setState({
             name: '',
             email: '',
             message: ''
-        })
+        }), 5500);
     }
    
     render() {
@@ -54,6 +58,7 @@ class Contact extends Component {
         
             <div>
                 <div className="contact-background">
+                    <ToastContainer position="top-center"/>
                     <Container className="contact">
                     <h1>Contact</h1>
                     <p> Vanity wishes to collaborate with anyone that is willing to make the night one to remember!
