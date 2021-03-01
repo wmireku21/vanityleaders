@@ -16,8 +16,6 @@ class Bottom extends Component {
             name: '',
             email: '',
             number: '',
-            success: '',
-            error: '',
             toast: false
         }
 
@@ -30,47 +28,74 @@ class Bottom extends Component {
             [e.target.name]: e.target.value
         })
     }
-  
+    
+    nameValidation = (fieldValue) => {
+        if (fieldValue.trim() === '') {
+            return `Your name is required`;
+        }
+
+        if (/[^a-zA-Z -]/.test(fieldValue)) {
+            return 'Invalid characters. Please try again';
+        }
+
+        if (fieldValue.trim().length < 3) {
+            return `Your name needs to be atleast 3 characters`;
+        }
+
+        return null;
+    }
+
+    emailValidation = email => {
+        if (/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+        .test(email,)) {
+            return null;
+        }
+
+        if (email.trim() === '') {
+            return 'Email is required';
+        }
+
+        return 'Please enter a valid email';
+    }
+
+    numberValidation = number => {
+        if (number.trim().length > 0 && number.trim().length < 10) {
+            return 'Please enter a valid phone number';
+        }
+
+        return null;
+    }
+
+
     handleSubmit = e => {
 
         e.preventDefault();
-        let newContact = JSON.stringify(
-            {
+        let newContact = JSON.stringify({
             name: this.state.name,
             email: this.state.email,
             number: this.state.number
-            });
-
+        });
+        
+        this.nameValidation(this.state.name);
+        this.emailValidation(this.state.email);
+        this.numberValidation(this.state.number);
+                
+        
         axios.post('/api/items', newContact, {headers:{"Content-Type" : "application/json"}})
              .then(res => {
                  //res => console.log(res.data)
-                 //this.setState({success: res.status});
                  toast.success("You've been added to the subscription list")
              })
              .catch(
-                 err => this.setState({err: err})
-                //err => console.log(err)
-                //notify("Oops, something is wrong. Please check again")
-                );
+                err => console.log(err)
+            );
             
-            if (this.state.error !== '') {
-                toast.warn('Oops, something is wrong. Please look over your submission and try again')
-            }
-        /*if (this.state.success === '200') {
-            toast("You've been added to the subscription list")
-        } else {
-            toast("Oops, something is wrong. Check again")
-        }
-        */
-
-        setTimeout(() => this.setState({
-            name: '',
-            email: '',
-            number: '',
-            error: ''
-        }), 5500);
-        
-
+            setTimeout(() => this.setState({
+                name: '',
+                email: '',
+                number: '',
+                error: ''
+            }), 5500);  
         
     }
 
@@ -97,7 +122,7 @@ class Bottom extends Component {
                            <i className="fas fa-envelope"></i>{' '}<a style={{color: 'black'}} href="mailto:vanityleaders@gmail.com">vanityleaders@gmail.com</a><br></br>
                            </p>
                            <a href="https://www.facebook.com/Vanity-Leaders-104289611177277/?__tn__=%2Cd%2CP-R&eid=ARDX3A1cL92_I3pStCE4lcCJ3EHTQh6okF3NkDSmh_U-yinUq3x8KWDP4WnzYx1rVQtpAxUZh_22sPtC" target="_blank" rel="noopener noreferrer"><i class="ico fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/vanityleaders/" target="_blank"><i className="ico fab fa-instagram" rel="noopener noreferrer"></i></a>
+                            <a href="https://www.instagram.com/vanityleaders/" target="_blank" rel="noopener noreferrer"><i className="ico fab fa-instagram" rel="noopener noreferrer"></i></a>
                             <i style={{cursor: 'pointer'}} id="UncontrolledPopover" className="ico fab fa-snapchat-ghost"></i>      
                             <UncontrolledPopover placement="bottom" target="UncontrolledPopover">
                                 <PopoverHeader>Snapchat</PopoverHeader>
@@ -117,6 +142,8 @@ class Bottom extends Component {
                                     id="full-name"
                                     class="form-control"
                                     placeholder="Full Name"
+                                    pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$"
+                                    title="Please enter a valid name"
                                     required
                                     />
                                 </div>
@@ -129,6 +156,8 @@ class Bottom extends Component {
                                     id="email"
                                     class="form-control"
                                     placeholder="Email"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$"
+                                    title="Please enter a valid email"
                                     required
                                     />
                                 </div>
@@ -136,10 +165,13 @@ class Bottom extends Component {
                                     <input
                                     onChange={this.handleChange}
                                     value={this.state.number}
-                                    type="number"
+                                    type="tel"
                                     name="number"
                                     id="number"
                                     class="form-control"
+                                    minLength="10"
+                                    pattern="[0-9]+"
+                                    title="Please enter a valid phone number"
                                     placeholder="Phone Number (optional)"
                                     />
                                 </div>
@@ -157,7 +189,7 @@ class Bottom extends Component {
                         
                     </div>
                 </div>
-                <div class="part1">
+                <div className="part1">
                     <div className="container" >
                             <h4 style={{textAlign: 'center'}}> Subscribe to receive our latest updates</h4>
                             <form onSubmit={this.handleSubmit}>
@@ -170,6 +202,8 @@ class Bottom extends Component {
                                     id="full-name"
                                     class="form-control"
                                     placeholder="Full Name"
+                                    pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$"
+                                    title="Please enter a valid name"
                                     required
                                     />
                                 </div>
@@ -182,6 +216,8 @@ class Bottom extends Component {
                                     id="email"
                                     class="form-control"
                                     placeholder="Email"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$"
+                                    title="Please enter a valid email"
                                     required
                                     />
                                 </div>
@@ -189,14 +225,17 @@ class Bottom extends Component {
                                     <input
                                     onChange={this.handleChange}
                                     value={this.state.number}
-                                    type="number"
+                                    type="tel"
                                     name="number"
                                     id="number"
                                     class="form-control"
+                                    minLength="10"
+                                    pattern="[0-9]+"
+                                    title="Please enter a valid phone number"
                                     placeholder="Phone Number (optional)"
                                     />
                                 </div>
-                                <button onClick={this.handleSubmit} id="submit" type="submit" class="btn btn-dark btn-block">
+                                <button  id="submit" type="submit" className="btn btn-dark btn-block">
                                     Sign Up
                                 </button>
                             </form>
@@ -208,8 +247,8 @@ class Bottom extends Component {
                                     <p>
                                     <i className="fas fa-phone"></i>{' '}<a style={{color: 'black'}} href="tel:3127743151">(312) 774-3151</a><br></br>
                                     <i className="fas fa-envelope"></i>{' '}<a style={{color: 'black'}} href="mailto:vanityleaders@gmail.com">vanityleaders@gmail.com</a><br></br>
-                                    <a href="https://www.facebook.com/Vanity-Leaders-104289611177277/?__tn__=%2Cd%2CP-R&eid=ARDX3A1cL92_I3pStCE4lcCJ3EHTQh6okF3NkDSmh_U-yinUq3x8KWDP4WnzYx1rVQtpAxUZh_22sPtC"><i class="ico fab fa-facebook-f"></i></a>
-                                    <a href="https://www.instagram.com/vanityleaders/"><i className="ico fab fa-instagram"></i></a>
+                                    <a href="https://www.facebook.com/Vanity-Leaders-104289611177277/?__tn__=%2Cd%2CP-R&eid=ARDX3A1cL92_I3pStCE4lcCJ3EHTQh6okF3NkDSmh_U-yinUq3x8KWDP4WnzYx1rVQtpAxUZh_22sPtC" target="_blank" rel="noopener noreferrer"><i class="ico fab fa-facebook-f"></i></a>
+                                    <a href="https://www.instagram.com/vanityleaders/"><i className="ico fab fa-instagram" target="_blank" rel="noopener noreferrer"></i></a>
                                     <i style={{cursor: 'pointer'}} id="UncontrolledPopover" className="ico fab fa-snapchat-ghost"></i>      
                                     <UncontrolledPopover placement="bottom" target="UncontrolledPopover">
                                         <PopoverHeader>Snapchat</PopoverHeader>
