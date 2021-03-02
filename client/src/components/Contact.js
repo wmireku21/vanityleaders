@@ -66,11 +66,11 @@ class Contact extends Component {
                             <Form onSubmit={this.handleSubmit.bind(this)} method="POST">
                                 <FormGroup for="email">
                                     <Label><b>Name</b></Label>
-                                    <Input type="text" name="name" id="contact-name" placeholder="Full Name" value={this.state.name} onChange={this.handleChange} required/>
+                                    <Input type="text" name="name" id="contact-name" placeholder="Full Name" value={this.state.name} onChange={this.handleChange} pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" title="Please enter a valid name" required/>
                                 </FormGroup>
                                 <FormGroup>
                                     <Label><b>Email</b></Label>
-                                    <Input type="email" name="email" id="contact-email" placeholder="Email" value={this.state.email} onChange={this.handleChange} required/>
+                                    <Input type="email" name="email" id="contact-email" placeholder="Email" value={this.state.email} onChange={this.handleChange} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$" title="Please enter a valid email" required/>
                                 </FormGroup>
                                 <FormGroup>
                                     <Label><b>Message</b></Label>
